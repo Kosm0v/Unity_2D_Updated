@@ -1,3 +1,5 @@
+Adrian Kosmowski
+
 Poruszanie postaci: strzalki lewo/prawo
 Skakanie: strzalka w gore
 Strzelanie: spacja
