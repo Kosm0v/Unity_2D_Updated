@@ -14,6 +14,7 @@ predkosc pily
 zasieg pily
 predkosc ataku postaci
 
+po utracie 3 życ postac wraca na poczatek planszy.
 
 Projekt wykonany na darmowych assetach, z wykorzystaniem warstw.
 Do projektu dołączam również krotki filmik prezentujacy.
