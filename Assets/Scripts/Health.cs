@@ -28,6 +28,14 @@ public class Health : MonoBehaviour
                 anim.SetTrigger("die");
                 GetComponent<PlayerMovement>().enabled = false;
                 dead = true;
+
+                
+                anim.SetTrigger("alive");
+                GetComponent<PlayerMovement>().enabled = true;
+                dead = false;
+                currentHealth = 3;
+                GetComponent<PlayerMovement>().placeOnStart();
+                
             }
         }
     }

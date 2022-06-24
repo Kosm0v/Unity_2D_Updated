@@ -52,6 +52,8 @@ public class PlayerMovement : MonoBehaviour
         }
         else
             wallJumpCooldown += Time.deltaTime;
+
+        
     }
 
     private void Jump()
@@ -93,6 +95,11 @@ public class PlayerMovement : MonoBehaviour
     public bool canAttack()
     {
         return horizontalInput == 0 && isGrounded() && !onWall();
+    }
+
+    public void placeOnStart()
+    {
+        transform.position = new Vector3(-9, -2, 0);
     }
 
 
