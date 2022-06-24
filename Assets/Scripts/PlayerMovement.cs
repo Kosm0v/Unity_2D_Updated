@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        //Grab references for rigidbody and animator from object
+        //tworzenie obiektow
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
@@ -24,17 +24,17 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
 
-        //Flip player when moving left-right
+        //obracanie postaci podczas poruszania lewo-prawo
         if (horizontalInput > 0.01f)
             transform.localScale = Vector3.one;
         else if (horizontalInput < -0.01f)
             transform.localScale = new Vector3(-1, 1, 1);
 
-        //Set animator parameters
+        //Ustaw Parametry
         anim.SetBool("run", horizontalInput != 0);
         anim.SetBool("grounded", isGrounded());
 
-        //Wall jump logic
+        //Skakanie
         if (wallJumpCooldown > 0.2f)
         {
             body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
             else
                 body.gravityScale = 7;
 
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.UpArrow))
                 Jump();
         }
         else
@@ -89,4 +89,11 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, new Vector2(transform.localScale.x, 0), 0.1f, wallLayer);
         return raycastHit.collider != null;
     }
+
+    public bool canAttack()
+    {
+        return horizontalInput == 0 && isGrounded() && !onWall();
+    }
+
+
 }
