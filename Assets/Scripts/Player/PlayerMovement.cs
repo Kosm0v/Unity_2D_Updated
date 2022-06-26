@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -99,8 +100,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void placeOnStart()
     {
-        transform.position = new Vector3(-9, -2, 0);
+        transform.position = new Vector3(-8, 2.5f, 0);
     }
-
 
 }

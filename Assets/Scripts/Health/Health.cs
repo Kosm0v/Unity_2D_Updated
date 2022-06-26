@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
     private Animator anim;
     private bool dead;
 
+
     private void Awake()
     {
         currentHealth = startingHealth;
@@ -29,7 +30,6 @@ public class Health : MonoBehaviour
                 GetComponent<PlayerMovement>().enabled = false;
                 dead = true;
 
-                
                 anim.SetTrigger("alive");
                 GetComponent<PlayerMovement>().enabled = true;
                 dead = false;

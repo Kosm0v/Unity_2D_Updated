@@ -45,6 +45,9 @@ TagManager:
   - name: background
     uniqueID: 1293255229
     locked: 0
+  - name: traps
+    uniqueID: 585451561
+    locked: 0
   - name: items
     uniqueID: 2003256071
     locked: 0
